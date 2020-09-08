@@ -4,7 +4,10 @@ import math
 
 def minimum_distance(x, y):
     #write your code here
-    return 10 ** 18
+    if len(x) <= 1:
+        return 10 ** 18
+    if len(x) == 2:
+        return ((x[1] - x[0]) ** 2 + (y[1] - y[0]) ** 2) ** 0.5
 
 if __name__ == '__main__':
     input = sys.stdin.read()
