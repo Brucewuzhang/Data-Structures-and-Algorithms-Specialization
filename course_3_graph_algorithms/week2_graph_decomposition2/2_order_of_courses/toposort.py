@@ -28,8 +28,6 @@ def dfs(adj):
 
 
 def toposort(adj):
-    used = [0] * len(adj)
-    order = []
     # write your code here
     # sort using post-order
     post_order = dfs(adj)

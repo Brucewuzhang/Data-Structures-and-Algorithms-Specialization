@@ -13,7 +13,7 @@ def negative_cycle(adj, cost):
         s = list(D.keys())[0]
         D[s] = 0
         changed = False
-        for i in range(len(D) - 1):
+        for i in range(len(D)-1):
             for j in D:
                 for l, k in enumerate(adj[j]):
                     if k not in D:
@@ -38,7 +38,7 @@ def negative_cycle(adj, cost):
                 return 1
         pop_list = []
         for k, v in D.items():
-            if v == float('inf'):
+            if v != float('inf'):
                 pop_list.append(k)
         for k in pop_list:
             D.pop(k)

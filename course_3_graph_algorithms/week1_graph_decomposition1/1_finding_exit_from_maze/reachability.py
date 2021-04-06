@@ -1,9 +1,10 @@
-#Uses python3
+# Uses python3
 
 import sys
 
+
 def reach(adj, x, y, memory_dict={}):
-    #write your code here
+    # write your code here
     if x in memory_dict:
         return 0
     memory_dict[x] = 1
@@ -16,12 +17,13 @@ def reach(adj, x, y, memory_dict={}):
             return 1
     return 0
 
+
 if __name__ == '__main__':
     input = sys.stdin.read()
-#     input = """4 2
-# 1 2
-# 3 2
-# 1 4"""
+    #     input = """4 2
+    # 1 2
+    # 3 2
+    # 1 4"""
     data = list(map(int, input.split()))
     n, m = data[0:2]
     data = data[2:]

@@ -28,6 +28,20 @@ def dfs_post(g):
 
 def acyclic(adj):
     # if acyclic, each strongly connected components can have at most 1 vertex
+    post_order = dfs_post(adj)
+    sorted_idx, _ = zip(*sorted(post_order.items(), key=lambda x: x[1], reverse=True))
+    # print(sorted_idx)
+    sorted_dict = {i: o for o, i in enumerate(sorted_idx)}
+    for i in range(len(adj)):
+        for j in adj[i]:
+            if sorted_dict[i] > sorted_dict[j]:
+                # print(i, j)
+                return 1
+    return 0
+
+
+def acyclic_old(adj):
+    # if acyclic, each strongly connected components can have at most 1 vertex
     adj_r = [[] for _ in range(n)]
     for i, edges_ in enumerate(adj):
         for j in edges_:
